@@ -5,6 +5,8 @@ using InControl;
 using UnityEngine.SceneManagement;
 
 public class PlayerInput : MonoBehaviour {
+    InputDevice device;
+
     //public GameObject rightArm;
     //public GameObject leftArm;
     public GameObject lolz;
@@ -44,6 +46,11 @@ public class PlayerInput : MonoBehaviour {
     public bool recovering = false;
     public bool canRow = true;
 
+    public void setController(InputDevice d)
+    {
+        device = d;
+    }
+
 	// Use this for initialization
 	void Start () {
         range_RO = -2 * min_RO;
@@ -55,7 +62,10 @@ public class PlayerInput : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        InputDevice device = InputManager.ActiveDevice;
+        if (device == null)
+        {
+            device = InputManager.ActiveDevice;
+        }
         InputControl rightTrigger = device.GetControl(InputControlType.RightTrigger);
         InputControl leftTrigger = device.GetControl(InputControlType.LeftTrigger);
         InputControl restart = device.GetControl(InputControlType.Start);

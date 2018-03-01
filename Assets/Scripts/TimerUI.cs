@@ -21,7 +21,7 @@ public class TimerUI : MonoBehaviour {
         int i = 1;
         while(PlayerPrefs.HasKey(GameManager.instance.CourseKey + "_" + i))
         {
-            Debug.Log(i + " " + FloatToString(PlayerPrefs.GetFloat(GameManager.instance.CourseKey + "_" + i)));
+            //Debug.Log(i + " " + FloatToString(PlayerPrefs.GetFloat(GameManager.instance.CourseKey + "_" + i)));
             i++;
         }
 	}
