@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using InControl;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     public static GameManager instance = null;
@@ -11,6 +13,7 @@ public class GameManager : MonoBehaviour {
     private float finishTime = -1f;
 
     public string CourseKey = "A";
+    public int readyPlayers = 0;
 
     private void Awake()
     {
@@ -30,7 +33,14 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (CourseKey == "Tutorial")
+        {
+            if (readyPlayers == InputManager.Devices.Count)
+            {
+                //TODO REDIRECT TO STAGE
+                SceneManager.LoadScene("NANI");
+            }
+        }
 	}
 
     public void ResetRace()
