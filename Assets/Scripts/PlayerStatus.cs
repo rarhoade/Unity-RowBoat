@@ -50,4 +50,22 @@ public class PlayerStatus : MonoBehaviour
             recovering = false;
         }
     }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+            canRow = true;
+    }
+
+    public void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+            canRow = true;
+    }
+
+    public void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+            canRow = false;
+    }
 }

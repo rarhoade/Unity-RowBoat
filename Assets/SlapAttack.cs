@@ -56,7 +56,7 @@ public class SlapAttack : MonoBehaviour {
         else
             rightSlap = false;
         slapper.GetComponent<Slap>().slapping = false;
-        transform.Find("Person").GetComponent<PlayerStatus>().canRow = true;
+        transform.GetComponent<PlayerStatus>().canRow = true;
     }
 	
 	// Update is called once per frame
@@ -65,12 +65,12 @@ public class SlapAttack : MonoBehaviour {
         {
             leftSlap = true;
             StartCoroutine(Slap("left"));
-            transform.Find("Person").GetComponent<PlayerStatus>().canRow = false;
+            transform.GetComponent<PlayerStatus>().canRow = false;
         }
         else if (InputManager.ActiveDevice.RightBumper.WasPressed && !rightSlap)
         {
             rightSlap = true;
-            transform.Find("Person").GetComponent<PlayerStatus>().canRow = false;
+            transform.GetComponent<PlayerStatus>().canRow = false;
             StartCoroutine(Slap("right"));
         }
 	}
