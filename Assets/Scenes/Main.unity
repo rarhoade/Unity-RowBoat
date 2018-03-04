@@ -706,7 +706,6 @@ GameObject:
   - component: {fileID: 361804813}
   - component: {fileID: 361804814}
   - component: {fileID: 361804815}
-  - component: {fileID: 361804816}
   m_Layer: 0
   m_Name: UI Manager
   m_TagString: Untagged
@@ -756,20 +755,6 @@ MonoBehaviour:
   finish: {fileID: 739186196}
   win: {fileID: 1259624566}
   lose: {fileID: 1762868360}
---- !u!114 &361804816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 361804812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba08fa26f9d5e2546980bdc8ef6db032, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 859855943}
-  bg: {fileID: 1488451158}
-  pi: {fileID: 1823963578}
 --- !u!1 &431743755
 GameObject:
   m_ObjectHideFlags: 0
@@ -2173,7 +2158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &1295347845
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3304,6 +3289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CourseKey: A
+  readyPlayers: 0
 --- !u!114 &1491746181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4397,9 +4383,6 @@ MonoBehaviour:
   max_vel: 15
   max_turn: 10
   speed_mult: 5
-  maxStamina: 30
-  recovering: 0
-  canRow: 1
 --- !u!138 &1823963579
 FixedJoint:
   m_ObjectHideFlags: 0
@@ -4883,8 +4866,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1958215398}
   - component: {fileID: 1958215400}
+  - component: {fileID: 1958215402}
+  - component: {fileID: 1958215404}
   - component: {fileID: 1958215401}
   - component: {fileID: 1958215399}
+  - component: {fileID: 1958215403}
   m_Layer: 0
   m_Name: Lolz
   m_TagString: Player
@@ -4952,6 +4938,49 @@ MonoBehaviour:
   rightSlapper: {fileID: 2141920305}
   sizeMult: 2
   slapTime: 0.2
+--- !u!114 &1958215402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958215397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5548c2ee0673f3f45bac982f9f6044d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deviceNum: 0
+--- !u!114 &1958215403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958215397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23ec216cc261d484c8c3760d4c9bfaa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lolz: {fileID: 1958215397}
+  max_vel: 15
+  max_turn: 10
+  speed_mult: 5
+--- !u!114 &1958215404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958215397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3d7bdea4aee0347b400cc5d14c1ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxStamina: 30
+  recovering: 0
+  canRow: 1
+  stamina: 105
+  pulledThisFrame: 0
 --- !u!1 &1994588932
 GameObject:
   m_ObjectHideFlags: 0
