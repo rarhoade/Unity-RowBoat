@@ -24,9 +24,21 @@ public class PlayerStatus : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-
+        if (recovering)
+        {
+            stamina = Mathf.Min(stamina + 10 * Time.fixedDeltaTime, maxStamina);
+        }
+        else if (!pulledThisFrame)
+        {
+            stamina = Mathf.Min(stamina + 20 * Time.fixedDeltaTime, maxStamina);
+        }
+        else
+        {
+            stamina = Mathf.Min(stamina + 10 * Time.fixedDeltaTime, maxStamina);
+            pulledThisFrame = false;
+        }
     }
 
     void OarPulled(float diff, float lastVal)
