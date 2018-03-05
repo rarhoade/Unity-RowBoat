@@ -69,15 +69,15 @@ public class PlayerStatus : MonoBehaviour
             canRow = true;
     }
 
-    public void OnCollisionStay(Collision collision)
+    /*public void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
             canRow = true;
-    }
+    }*/
 
-    public void OnCollisionExit(Collision collision)
+    /*public void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
             canRow = false;
-    }
+    }*/
 }

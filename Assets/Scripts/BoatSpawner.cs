@@ -43,6 +43,7 @@ public class BoatSpawner : MonoBehaviour {
         Debug.Log("Changed");
         
         GameObject go = Instantiate(prefabBoat);
+        go.transform.Translate(new Vector3(0, 0, -7 + 7 * count));
         devices[count] = id;
         go.GetComponentsInChildren<PlayerInput>()[0].setController(devices[count]);
         count++;

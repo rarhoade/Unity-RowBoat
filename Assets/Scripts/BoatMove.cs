@@ -67,7 +67,7 @@ public class BoatMove : MonoBehaviour
         {
             Vector3 rp = Quaternion.AngleAxis(30, boat.transform.up) * -boat.transform.right;
             Vector3 lp = Quaternion.AngleAxis(-30, boat.transform.up) * -boat.transform.right; ;
-            boat.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            //boat.GetComponent<Rigidbody>().velocity = new Vector3(0, boat.GetComponent<Rigidbody>().velocity.y, 0);
             //before = lolz.transform.right;//Vector3.Cross(lolz.transform.right, lolz.transform.up);
             Vector3 vel = (rp * vels[1] + lp * vels[0]);
             Debug.DrawRay(boat.transform.position, vel * 10, Color.green, 0.1f);

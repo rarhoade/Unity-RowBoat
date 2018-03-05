@@ -18,6 +18,7 @@ public class Slap : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Boat") && slapping)
         {
+            collision.gameObject.GetComponentInParent<PlayerStatus>().canRow = false;
             collision.gameObject.GetComponent<Rigidbody>().AddForce((gameObject.transform.right * horSlap + new Vector3(0, 1, 0) * vertSlap), ForceMode.Impulse);
         }
     }
