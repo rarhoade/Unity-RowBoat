@@ -28,15 +28,19 @@ public class PlayerStatus : MonoBehaviour
     {
         if (recovering)
         {
-            stamina = Mathf.Min(stamina + 10 * Time.fixedDeltaTime, maxStamina);
+            stamina = Mathf.Min(stamina + 30 * Time.fixedDeltaTime, maxStamina);
+            if (stamina == maxStamina)
+            {
+                recovering = false;
+            }
         }
         else if (!pulledThisFrame)
         {
-            stamina = Mathf.Min(stamina + 20 * Time.fixedDeltaTime, maxStamina);
+            stamina = Mathf.Min(stamina + 40 * Time.fixedDeltaTime, maxStamina);
         }
         else
         {
-            stamina = Mathf.Min(stamina + 10 * Time.fixedDeltaTime, maxStamina);
+            stamina = Mathf.Min(stamina + 30 * Time.fixedDeltaTime, maxStamina);
             pulledThisFrame = false;
         }
     }
@@ -63,11 +67,7 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
-    public void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-            canRow = true;
-    }
+
 
     /*public void OnCollisionStay(Collision collision)
     {

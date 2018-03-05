@@ -473,6 +473,8 @@ GameObject:
   - component: {fileID: 4857981386488016}
   - component: {fileID: 54207796997308382}
   - component: {fileID: 65500636979593360}
+  - component: {fileID: 114226547702180920}
+  - component: {fileID: 65954095479233682}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Boat
@@ -1875,6 +1877,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000027, y: 1.0000007, z: 1.000001}
   m_Center: {x: 0.00000059604645, y: -0.00000011920929, z: -0.00000023841858}
+--- !u!65 &65954095479233682
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1668444924649900}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!81 &81064634639201210
 AudioListener:
   m_ObjectHideFlags: 1
@@ -1926,6 +1940,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114226547702180920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1668444924649900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00f5894153712d1418be58fc85e8da51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114235619401921322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2094,7 +2119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 114482258273070288}
-  bg: {fileID: 114039972008789122}
+  bg: {fileID: 114343746635559504}
   pi: {fileID: 0}
 --- !u!114 &114482258273070288
 MonoBehaviour:

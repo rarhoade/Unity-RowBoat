@@ -31,7 +31,7 @@ public class CheckpointReporter : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "WALL")
+        if (other.tag == "Boat")
         {
             Debug.Log("ChkNum: " + checkpointNumber);
             Debug.Log("Parent's Child Count: " + transform.parent.transform.parent.childCount);

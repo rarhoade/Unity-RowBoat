@@ -135,8 +135,8 @@ public class TimerUI : MonoBehaviour {
             ret += "0";
         }
         ret += singles;
-        Debug.Log(singles);
-        Debug.Log(ret);
+        //Debug.Log(singles);
+        //Debug.Log(ret);
         return ret;
     }
 }
