@@ -16,7 +16,7 @@ public class Slap : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Player") && slapping)
+        if (collision.gameObject.CompareTag("Boat") && slapping)
         {
             collision.gameObject.GetComponent<Rigidbody>().AddForce((gameObject.transform.right * horSlap + new Vector3(0, 1, 0) * vertSlap), ForceMode.Impulse);
         }

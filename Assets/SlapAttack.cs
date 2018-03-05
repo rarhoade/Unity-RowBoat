@@ -12,12 +12,13 @@ public class SlapAttack : MonoBehaviour {
     public float sizeMult = 2;
     public float slapTime = .5f;
 
+    private int deviceNum;
     private bool rightSlap;
     private bool leftSlap;
 
 	// Use this for initialization
 	void Start () {
-		
+        deviceNum = transform.GetComponentInParent<PlayerInput>().deviceNum;
 	}
 
     IEnumerator Slap(string side)
@@ -61,13 +62,13 @@ public class SlapAttack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (InputManager.ActiveDevice.LeftBumper.WasPressed && !leftSlap)
+		if (InputManager.Devices[deviceNum].LeftBumper.WasPressed && !leftSlap)
         {
             leftSlap = true;
             StartCoroutine(Slap("left"));
             transform.GetComponent<PlayerStatus>().canRow = false;
         }
-        else if (InputManager.ActiveDevice.RightBumper.WasPressed && !rightSlap)
+        else if (InputManager.Devices[deviceNum].RightBumper.WasPressed && !rightSlap)
         {
             rightSlap = true;
             transform.GetComponent<PlayerStatus>().canRow = false;
