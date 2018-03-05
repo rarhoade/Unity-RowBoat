@@ -109,17 +109,21 @@ public class TimerUI : MonoBehaviour {
     {
         string ret = "";
 
-        if (timePassed >= 60)
-            ret += ((int)timePassed) / 60;
+        if (timePassed / 60 >= 10)
+            ret += ((int)timePassed / 60);
+        else if (timePassed / 60 >= 1)
+        {
+            ret += "0" + ((int)timePassed / 60);
+        }
         else
             ret += "00";
         ret += ":";
 
-        if (timePassed >= 10)
-            ret += ((int)timePassed);
-        else if (timePassed >= 1)
+        if (timePassed % 60 >= 10)
+            ret += ((int)timePassed % 60);
+        else if (timePassed % 60 >= 1)
         {
-            ret += "0" + (int)timePassed;
+            ret += "0" + ((int)timePassed % 60);
         }
         else
             ret += "00";
@@ -131,7 +135,8 @@ public class TimerUI : MonoBehaviour {
             ret += "0";
         }
         ret += singles;
-
+        Debug.Log(singles);
+        Debug.Log(ret);
         return ret;
     }
 }
