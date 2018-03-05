@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// NOTE: This code was taken from a Youtube video: https://www.youtube.com/watch?v=3MoHJtBnn2U
 public class MakeSomeNoise : MonoBehaviour {
 
 	public float power = 3;
